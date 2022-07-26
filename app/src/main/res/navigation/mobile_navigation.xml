@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.redhunter.searchfriends.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_searchDogsFragment"
+            app:destination="@id/searchDogsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_allDogsFragment"
+            app:destination="@id/allDogsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_usFragment"
+            app:destination="@id/usFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_randomDogFragment"
+            app:destination="@id/randomDogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_terms_and_conditions"
+        android:name="com.redhunter.searchfriends.ui.home.TermsAndConditionsFragment"
+        android:label="Terms and conditions"
+        tools:layout="@layout/fragment_tems_and_conditions" />
+    <fragment
+        android:id="@+id/searchDogsFragment"
+        android:name="com.redhunter.searchfriends.ui.home.SearchDogsFragment"
+        android:label="fragment_search_dogs"
+        tools:layout="@layout/fragment_search_dogs" />
+    <fragment
+        android:id="@+id/allDogsFragment"
+        android:name="com.redhunter.searchfriends.ui.home.AllDogsFragment"
+        android:label="fragment_all_dogs"
+        tools:layout="@layout/fragment_all_dogs" />
+    <fragment
+        android:id="@+id/usFragment"
+        android:name="com.redhunter.searchfriends.ui.home.UsFragment"
+        android:label="fragment_us"
+        tools:layout="@layout/fragment_us" />
+    <fragment
+        android:id="@+id/randomDogFragment"
+        android:name="com.redhunter.searchfriends.ui.home.RandomDogFragment"
+        android:label="fragment_random_dog"
+        tools:layout="@layout/fragment_random_dog" />
+
+</navigation>
