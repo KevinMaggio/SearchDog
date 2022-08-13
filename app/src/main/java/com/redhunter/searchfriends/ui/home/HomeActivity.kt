@@ -14,6 +14,7 @@ import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.ActivityHomeBinding
 import com.redhunter.searchfriends.ui.login.LoginActivity
 
+
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -50,4 +51,5 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

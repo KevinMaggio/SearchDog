@@ -30,7 +30,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/circle_white"
-            android:text="random"
+            android:text="@string/home_bt_random"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -41,7 +41,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/circle_black"
-            android:text="dogs"
+            android:text="@string/home_bt_dogs"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -52,7 +52,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/circle_white"
-            android:text="us"
+            android:text="@string/home_bt_us"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -62,19 +62,39 @@
             android:layout_height="80dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/circle_orange"
-            android:text="search"
+            android:text="@string/home_bt_search"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/title" />
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:text="Adopt me"
+        android:layout_marginStart="32dp"
+        android:text="@string/home_bt_adopt_me"
         android:textColor="@color/orange"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_hori_0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:listitem="@layout/item_dog" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_hori_0.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

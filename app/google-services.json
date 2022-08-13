@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "767235208299",
+    "project_id": "searchfriends-9ea95",
+    "storage_bucket": "searchfriends-9ea95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767235208299:android:ef273ea7b625e722e6ad2e",
+        "android_client_info": {
+          "package_name": "com.redhunter.searchfriends"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767235208299-slv63mjh8avh697clj9sjj26ofi0ludd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.redhunter.searchfriends",
+            "certificate_hash": "f5e1f3abd67436babe99bb9153dec827b1a01b30"
+          }
+        },
+        {
+          "client_id": "767235208299-53oiulf4e75isqsh2mqai6l5qv3m1dvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt2Mvi91rbYK9YoRDDd66HryOO0KbV6tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767235208299-53oiulf4e75isqsh2mqai6l5qv3m1dvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

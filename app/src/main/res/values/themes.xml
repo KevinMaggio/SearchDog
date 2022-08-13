@@ -23,6 +23,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
     <style name="Theme.SearchFriends.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SearchFriends.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

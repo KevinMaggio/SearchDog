@@ -7,15 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.redhunter.searchfriends.R
-
+import com.redhunter.searchfriends.databinding.FragmentTemsAndConditionsBinding
 
 class TermsAndConditionsFragment : Fragment() {
+    lateinit var binding: FragmentTemsAndConditionsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tems_and_conditions, container, false)
+    ): View {
+        binding= FragmentTemsAndConditionsBinding.inflate(inflater, container, false)
+
+
+        return binding.root
     }
 
 }

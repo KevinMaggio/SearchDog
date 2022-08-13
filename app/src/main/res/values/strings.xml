@@ -1,16 +1,46 @@
 <resources>
     <string name="app_name">SearchFriends</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home">HomeActivity</string>
+    <!-- Strings related with navigation Drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Strings related with nav Header-->
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <!-- Strings related with menu-->
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <!-- Strings related with Login-->
+    <string name="login_tv_support">If your account was not associated with the system, Contact <b>Technical Support</b></string>
+    <string name="login_bt_google">Login with google</string>
+    <string name="login_bt_login">Login</string>
+    <string name="login_bt_register">register</string>
+    <!-- Strings related with FireBase-->
+    <string name="firebase_title">Login</string>
+    <string name="firebase_et_email">Email Address</string>
+    <string name="firebase_et_password">Password</string>
+    <string name="firebase_enter">enter</string>
+    <!-- Strings related with register -->
+    <string name="register_tv_title">Register</string>
+    <string name="register_et_name">Name Complete</string>
+    <string name="register_et_email">Email Address</string>
+    <string name="register_et_password">Created password</string>
+    <string name="register_bt_register">Register</string>
+    <!-- Strings related with success-->
+    <string name="success_congratulations">Congratulations!</string>
+    <string name="success_msg">Registration finished</string>
+    <!-- Strings related with on boarding-->
+    <string name="onboarding_tv_hello">Hello</string>
+    <string name="onboarding_tv_human">Human</string>
+    <string name="onboarding_tv_msg">Are you willing to see our puppies?</string>
+    <!-- Strings relate with home-->
+    <string name="home_bt_random">random</string>
+    <string name="home_bt_dogs">dogs</string>
+    <string name="home_bt_us">us</string>
+    <string name="home_bt_search">search</string>
+    <string name="home_bt_adopt_me">Adopt me</string>
 </resources>

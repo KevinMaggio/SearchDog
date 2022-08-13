@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_dog"
         android:supportsRtl="true"
+        android:name=".AppSearchFriends"
         android:theme="@style/Theme.SearchFriends">
         <activity
             android:name=".ui.home.HomeActivity"
