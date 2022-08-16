@@ -74,9 +74,16 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/bt_radius_black"
+        android:enabled="false"
         android:text="@string/register_bt_register"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
+    <include
+        android:id="@+id/item_loading"
+        layout="@layout/item_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

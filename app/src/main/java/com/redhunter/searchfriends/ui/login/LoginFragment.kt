@@ -46,7 +46,6 @@ class LoginFragment : Fragment() {
         }
     }
 
-
     private fun loginToGoogle() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken("767235208299-53oiulf4e75isqsh2mqai6l5qv3m1dvq.apps.googleusercontent.com")

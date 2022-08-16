@@ -2,49 +2,83 @@ package com.redhunter.searchfriends.model.firebase
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FirebaseFirestore
-import com.redhunter.searchfriends.model.dto.firebaseDto.RegisterResponse
-import com.redhunter.searchfriends.model.dto.firebaseDto.UserResponse
+import com.redhunter.searchfriends.utils.StateLogin
 
 
 class UserFirebase {
     var fireStore = FirebaseFirestore.getInstance()
-    var registerLiveData = MutableLiveData(RegisterResponse(false))
-    val userResponseLiveData = MutableLiveData<List<UserResponse>>()
+    var statusResponse = MutableLiveData(StateLogin.EMPTY)
 
-
-    fun addUser(email: String, name: String, password: String) {
-        fireStore.collection("users").document(email)
-            .set(hashMapOf("name" to name, "email" to email, "password" to password))
-            .addOnCompleteListener {
-                isDataPushed(true)
+    fun registerUser(email: String, password: String, name: String) {
+        var temp = StateLogin.LOADING
+        fireStore.collection("users").get().addOnSuccessListener {
+            it.documents.forEach { doc ->
+                if (doc.get("email") == email) {
+                    temp = StateLogin.ERROR
+                }
             }
-    }
-
-    fun getAllUser() {
-        fireStore.collection("users").get().addOnCompleteListener {
-            val temp = mutableListOf<UserResponse>()
-            it.result.documents.forEach { doc ->
-                temp.add(
-                    UserResponse(
-                        doc.get("name").toString(),
-                        doc.get("email").toString(),
-                        doc.get("password").toString()
-                    )
-                )
+            if (temp == StateLogin.LOADING) {
+                temp = StateLogin.SUCCESS
             }
-             userResponseLiveData.postValue(temp)
+            when (temp) {
+                StateLogin.ERROR -> {
+                    statusResponse.postValue(StateLogin.ERROR)
+                }
+                StateLogin.SUCCESS -> {
+                    fireStore.collection("users").document(email)
+                        .set(hashMapOf("name" to name, "email" to email, "password" to password))
+                    statusResponse.postValue(StateLogin.SUCCESS)
+                }
+                else -> {
+                    statusResponse.postValue(StateLogin.LOADING)
+                }
+            }
         }
     }
 
-    fun getResponseAllUser(): MutableLiveData<List<UserResponse>> {
-        return userResponseLiveData
+    fun findUserByEmail(email: String, password: String) {
+        var temp = StateLogin.LOADING
+        fireStore.collection("users").get().addOnSuccessListener {
+            it.documents.forEach { doc ->
+                if (doc.get("email") == email && doc.get("password") == password) {
+                    temp = StateLogin.SUCCESS
+                }
+                if (doc.get("email") == email && doc.get("password") != password){
+                    temp = StateLogin.ERROR_PASS
+                }
+            }
+            if (temp == StateLogin.LOADING) {
+                temp = StateLogin.ERROR
+            }
+            when (temp) {
+                StateLogin.ERROR -> {
+                    statusResponse.postValue(StateLogin.ERROR)
+                }
+                StateLogin.SUCCESS -> {
+                    statusResponse.postValue(StateLogin.SUCCESS)
+                }
+                StateLogin.ERROR_PASS -> {
+                    statusResponse.postValue(StateLogin.ERROR_PASS)
+                }
+                else -> {
+                    statusResponse.postValue(StateLogin.LOADING)
+                }
+            }
+        }
     }
 
-    fun isDataPushed(value: Boolean) {
-        registerLiveData.postValue(RegisterResponse(value))
+//    fun findUserByEmail(email: String, password: String) {
+//        fireStore.collection("users").document(email).get().addOnCompleteListener {
+//            if (email == it.result.get("email") && password == it.result.get("password")       ) {
+//                statusResponse.postValue(StateLogin.SUCCESS)
+//            } else {
+//                statusResponse.postValue(StateLogin.ERROR_PASS)
+//            }
+//        }
+//    }
+
+    fun getResultStatus(): MutableLiveData<StateLogin> {
+        return statusResponse
     }
 
-    fun getRegisterResult(): MutableLiveData<RegisterResponse> {
-        return registerLiveData
-    }
 }

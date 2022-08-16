@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_randomDogFragment"
             app:destination="@id/randomDogFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
 
     <fragment
@@ -33,21 +36,42 @@
         android:id="@+id/searchDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.SearchDogsFragment"
         android:label="fragment_search_dogs"
-        tools:layout="@layout/fragment_search_dogs" />
+        tools:layout="@layout/fragment_search_dogs" >
+        <action
+            android:id="@+id/action_searchDogsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/allDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.AllDogsFragment"
         android:label="fragment_all_dogs"
-        tools:layout="@layout/fragment_all_dogs" />
+        tools:layout="@layout/fragment_all_dogs" >
+        <action
+            android:id="@+id/action_allDogsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usFragment"
         android:name="com.redhunter.searchfriends.ui.home.UsFragment"
         android:label="fragment_us"
-        tools:layout="@layout/fragment_us" />
+        tools:layout="@layout/fragment_us" >
+        <action
+            android:id="@+id/action_usFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/randomDogFragment"
         android:name="com.redhunter.searchfriends.ui.home.RandomDogFragment"
         android:label="fragment_random_dog"
-        tools:layout="@layout/fragment_random_dog" />
+        tools:layout="@layout/fragment_random_dog" >
+        <action
+            android:id="@+id/action_randomDogFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.redhunter.searchfriends.ui.home.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 
 </navigation>

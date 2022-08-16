@@ -2,39 +2,53 @@ package com.redhunter.searchfriends.viewModel.user
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.redhunter.searchfriends.model.dto.firebaseDto.RegisterResponse
-import com.redhunter.searchfriends.model.dto.firebaseDto.UserResponse
 import com.redhunter.searchfriends.model.useCase.UserRepositoryUseCase
+import com.redhunter.searchfriends.utils.StateLogin
+import java.util.regex.Matcher
 
 
 class UserViewModel  () : ViewModel(){
     private val userRepositoryUsesCase= UserRepositoryUseCase()
+    var validateFieldData = MutableLiveData(false)
 
     fun registerUser(email:String,password:String,name:String){
-        userRepositoryUsesCase.addUser(email,password,name)
+        userRepositoryUsesCase.registerUser(email,password,name)
     }
 
-
-    fun getDataRegisterUser(): MutableLiveData<RegisterResponse> {
-        val data = MutableLiveData<RegisterResponse>()
-        userRepositoryUsesCase.getResponseAddUser().observeForever{
+    fun getDataRegisterUser(): MutableLiveData<StateLogin> {
+        val data = MutableLiveData<StateLogin>()
+        userRepositoryUsesCase.getRegisterStatus().observeForever{
             data.postValue(it)
         }
         return data
     }
 
-    fun getAllUser(){
-        userRepositoryUsesCase.getAllUserFireStore()
+    fun loginFireStore(email:String,password:String){
+        userRepositoryUsesCase.loginFireStore(email,password)
     }
 
-    fun checkLoginUser(): MutableLiveData<Boolean> {
-        val data = MutableLiveData<Boolean>()
-        userRepositoryUsesCase.getResponseAllUser().observeForever{
-            //
+    fun validateFieldsLogin(email:String, password: String){
+        validateFieldData.postValue(checkEmail(email) && checkPassword(password))
+    }
+
+    fun validateFieldsRegister(email:String, password: String, name: String){
+        validateFieldData.postValue(checkEmail(email) && checkPassword(password) && checkName(name))
+    }
+
+    private fun checkName(name:String): Boolean {
+        return (name.isNotEmpty())
+    }
+
+    private fun checkPassword(password:String): Boolean {
+        return password.isNotEmpty()
+    }
+
+    private fun checkEmail(email:String): Boolean {
+        return if (email.isNotEmpty()) {
+            android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        }else{
+            false
         }
-        return data
     }
-
-
 
 }
