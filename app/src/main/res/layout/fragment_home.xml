@@ -90,6 +90,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:listitem="@layout/item_dog" />
 
+    <include
+        android:id="@+id/no_conection"
+        layout="@layout/error_conection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/item_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/rv_dogs" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_hori_0.5"
         android:layout_width="match_parent"

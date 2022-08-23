@@ -1,5 +1,6 @@
 package com.redhunter.searchfriends.ui.login
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,10 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentLoginBinding
 import com.redhunter.searchfriends.ui.onboarding.OnboardingActivity
+import com.redhunter.searchfriends.utils.Constants
+import com.redhunter.searchfriends.utils.Constants.USER_NAME
+import com.redhunter.searchfriends.utils.Constants.USER_PERMITS
+import com.redhunter.searchfriends.utils.Permission
 
 
 class LoginFragment : Fragment() {
@@ -44,6 +49,12 @@ class LoginFragment : Fragment() {
         binding.btRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+        binding.btInvited.setOnClickListener {
+            USER_PERMITS = Permission.LIMITED
+            USER_NAME= "INVITED"
+            startActivity(Intent(context, OnboardingActivity::class.java))
+                activity?.finish()
+        }
     }
 
     private fun loginToGoogle() {
@@ -68,8 +79,9 @@ class LoginFragment : Fragment() {
                     FirebaseAuth.getInstance().signInWithCredential(credential)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
-                                Log.d("success", account.email.toString())
 
+                                USER_NAME = it.result.user?.email.toString()
+                                USER_PERMITS = Permission.COMPLETE
                                 startActivity(Intent(context, OnboardingActivity::class.java))
                                 activity?.finish()
 

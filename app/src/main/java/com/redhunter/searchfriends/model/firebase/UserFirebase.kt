@@ -6,8 +6,8 @@ import com.redhunter.searchfriends.utils.StateLogin
 
 
 class UserFirebase {
-    var fireStore = FirebaseFirestore.getInstance()
-    var statusResponse = MutableLiveData(StateLogin.EMPTY)
+    private var fireStore = FirebaseFirestore.getInstance()
+    private var statusResponse = MutableLiveData(StateLogin.EMPTY)
 
     fun registerUser(email: String, password: String, name: String) {
         var temp = StateLogin.LOADING
@@ -46,19 +46,25 @@ class UserFirebase {
                 if (doc.get("email") == email && doc.get("password") != password){
                     temp = StateLogin.ERROR_PASS
                 }
+                if (email == "empty"){
+                    temp = StateLogin.EMPTY
+                }
             }
             if (temp == StateLogin.LOADING) {
-                temp = StateLogin.ERROR
+                temp = StateLogin.NO_REGISTER
             }
             when (temp) {
-                StateLogin.ERROR -> {
-                    statusResponse.postValue(StateLogin.ERROR)
+                StateLogin.NO_REGISTER -> {
+                    statusResponse.postValue(StateLogin.NO_REGISTER)
                 }
                 StateLogin.SUCCESS -> {
                     statusResponse.postValue(StateLogin.SUCCESS)
                 }
                 StateLogin.ERROR_PASS -> {
                     statusResponse.postValue(StateLogin.ERROR_PASS)
+                }
+                StateLogin.EMPTY ->{
+                    statusResponse.postValue(StateLogin.EMPTY)
                 }
                 else -> {
                     statusResponse.postValue(StateLogin.LOADING)
@@ -67,18 +73,7 @@ class UserFirebase {
         }
     }
 
-//    fun findUserByEmail(email: String, password: String) {
-//        fireStore.collection("users").document(email).get().addOnCompleteListener {
-//            if (email == it.result.get("email") && password == it.result.get("password")       ) {
-//                statusResponse.postValue(StateLogin.SUCCESS)
-//            } else {
-//                statusResponse.postValue(StateLogin.ERROR_PASS)
-//            }
-//        }
-//    }
-
     fun getResultStatus(): MutableLiveData<StateLogin> {
         return statusResponse
     }
-
 }

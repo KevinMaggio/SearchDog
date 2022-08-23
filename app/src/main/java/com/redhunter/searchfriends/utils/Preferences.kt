@@ -9,7 +9,7 @@ class Preferences (val context: Context) {
     private val KEY_FIREBASE_TOKEN = "user_name"
     private val LAST_ID= "last id"
 
-    private val storage = context.getSharedPreferences("com.niceShoes.", Context.MODE_PRIVATE)
+    private val storage = context.getSharedPreferences("com.SearchFriends", Context.MODE_PRIVATE)
 
     fun saveUserEmail(user: String) {
         storage.edit().putString(this.KEY_USER_EMAIL, user).apply()

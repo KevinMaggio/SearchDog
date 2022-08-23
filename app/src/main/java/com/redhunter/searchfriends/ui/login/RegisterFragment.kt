@@ -1,5 +1,6 @@
 package com.redhunter.searchfriends.ui.login
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentRegisterBinding
+import com.redhunter.searchfriends.utils.Constants.USER_NAME
 import com.redhunter.searchfriends.utils.StateLogin
 import com.redhunter.searchfriends.viewModel.user.UserViewModel
 
@@ -29,6 +31,7 @@ class RegisterFragment : Fragment() {
     ): View {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
+        controlButton(false)
         checkFields()
         actions()
         observers()
@@ -44,6 +47,10 @@ class RegisterFragment : Fragment() {
                 binding.etPassword.text.toString(),
                 binding.etName.text.toString()
             )
+            USER_NAME= binding.etEmail.text.toString()
+        }
+        binding.btBack.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 
@@ -66,6 +73,10 @@ class RegisterFragment : Fragment() {
             }
             StateLogin.LOADING -> {
                 binding.itemLoading.root.isVisible = true
+            }
+            StateLogin.NO_REGISTER -> {
+                binding.itemLoading.root.isVisible = false
+                binding.btEnter.isEnabled= false
             }
             StateLogin.SUCCESS -> {
                 binding.itemLoading.root.isVisible = false

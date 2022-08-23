@@ -11,6 +11,8 @@ import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentRegisterSuccessBinding
 import com.redhunter.searchfriends.ui.home.HomeActivity
 import com.redhunter.searchfriends.ui.onboarding.OnboardingActivity
+import com.redhunter.searchfriends.utils.Constants.USER_PERMITS
+import com.redhunter.searchfriends.utils.Permission
 
 
 class RegisterSuccessFragment : Fragment() {
@@ -28,6 +30,7 @@ class RegisterSuccessFragment : Fragment() {
 
     private fun actions(){
         binding.root.setOnClickListener {
+            USER_PERMITS= Permission.COMPLETE
             startActivity(Intent(context, OnboardingActivity::class.java))
         }
     }

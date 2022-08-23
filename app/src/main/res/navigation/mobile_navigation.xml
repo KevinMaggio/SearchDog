@@ -35,8 +35,8 @@
     <fragment
         android:id="@+id/searchDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.SearchDogsFragment"
-        android:label="fragment_search_dogs"
-        tools:layout="@layout/fragment_search_dogs" >
+        android:label="Search Dogs"
+        tools:layout="@layout/fragment_search_dogs">
         <action
             android:id="@+id/action_searchDogsFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -44,8 +44,8 @@
     <fragment
         android:id="@+id/allDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.AllDogsFragment"
-        android:label="fragment_all_dogs"
-        tools:layout="@layout/fragment_all_dogs" >
+        android:label="All Dogs"
+        tools:layout="@layout/fragment_all_dogs">
         <action
             android:id="@+id/action_allDogsFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -53,8 +53,8 @@
     <fragment
         android:id="@+id/usFragment"
         android:name="com.redhunter.searchfriends.ui.home.UsFragment"
-        android:label="fragment_us"
-        tools:layout="@layout/fragment_us" >
+        android:label="Us"
+        tools:layout="@layout/fragment_us">
         <action
             android:id="@+id/action_usFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -62,8 +62,8 @@
     <fragment
         android:id="@+id/randomDogFragment"
         android:name="com.redhunter.searchfriends.ui.home.RandomDogFragment"
-        android:label="fragment_random_dog"
-        tools:layout="@layout/fragment_random_dog" >
+        android:label="Random"
+        tools:layout="@layout/fragment_random_dog">
         <action
             android:id="@+id/action_randomDogFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -71,7 +71,32 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.redhunter.searchfriends.ui.home.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        android:label="Details"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_adoptSuccessFragment"
+            app:destination="@id/adoptSuccessFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_adoptErrorFragment"
+            app:destination="@id/adoptErrorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adoptSuccessFragment"
+        android:name="com.redhunter.searchfriends.ui.home.AdoptSuccessFragment"
+        android:label="Adopt Success"
+        tools:layout="@layout/fragment_adopt_success" >
+        <action
+            android:id="@+id/action_adoptSuccessFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/adoptErrorFragment"
+        android:name="com.redhunter.searchfriends.ui.home.AdoptErrorFragment"
+        android:label="Adopt Error"
+        tools:layout="@layout/fragment_adopt_error" >
+        <action
+            android:id="@+id/action_adoptErrorFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
 </navigation>

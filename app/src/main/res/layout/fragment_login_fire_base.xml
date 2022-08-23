@@ -41,6 +41,7 @@
         android:layout_marginEnd="30dp"
         android:background="@drawable/stroke_black"
         android:hint="@string/firebase_et_email"
+        android:inputType="textEmailAddress"
         android:paddingStart="30dp"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
@@ -51,6 +52,7 @@
         android:layout_margin="30dp"
         android:background="@drawable/stroke_black"
         android:hint="@string/firebase_et_password"
+        android:inputType="textPassword"
         android:paddingStart="30dp"
         app:layout_constraintTop_toBottomOf="@id/et_email" />
 
@@ -73,6 +75,15 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <include
+        android:id="@+id/modal"
+        layout="@layout/item_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

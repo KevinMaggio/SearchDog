@@ -32,6 +32,18 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_invited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_radius_red"
+        android:text="@string/login_bt_invited"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_support" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +53,7 @@
         android:background="@drawable/bt_radius_orange"
         android:text="@string/login_bt_register"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tv_support" />
+        app:layout_constraintBottom_toTopOf="@+id/bt_invited" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_login"

@@ -43,4 +43,14 @@
     <string name="home_bt_us">us</string>
     <string name="home_bt_search">search</string>
     <string name="home_bt_adopt_me">Adopt me</string>
+    <string name="login_bt_invited">Invited</string>
+    <string name="details_tv_adopted">Adopted</string>
+    <string name="details_tv_description_food">Cualquier dieta debe ser apropiada para el perro. años. Debe haber agua limpia y fresca disponible en todo momento.</string>
+    <string name="details_tv_description_house">Algunos perros pueden optar por dormir en otra habitación por completo, incluso si mantienes la puerta de tu habitación abierta</string>
+    <string name="details_tv_description_health">Crea un horario para sus necesidades. Establece una rutina regular de alimentación para que consigan hacer sus necesidades más o menos siempre a la misma hora.</string>
+    <string name="details_tv_description_friends">Buscará la oportunidad para empezar a hacer sus travesuras. Ya sea para correr, buscar o atrapar, tu amigo peludo siempre estará disponible</string>
+    <string name="details_bt_back">Back</string>
+    <string name="congrats_bt_back">back to home</string>
+    <string name="congrats_success_title">Ups! tenemos un error</string>
+    <string name="congrats_success">Gracias a ti, Lucky tiene hogar!</string>
 </resources>

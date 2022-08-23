@@ -5,7 +5,7 @@ import com.redhunter.searchfriends.model.repository.UserRepository
 import com.redhunter.searchfriends.utils.StateLogin
 
 class UserRepositoryUseCase {
-    val userRepository= UserRepository()
+    private val userRepository= UserRepository()
 
     fun registerUser(email:String,name:String,password:String){
         userRepository.registerUser(email,password,name)
