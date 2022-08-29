@@ -14,7 +14,6 @@ import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentRandomDogBinding
 import com.redhunter.searchfriends.model.dto.retrofitDto.Status
 import com.redhunter.searchfriends.utils.Connection
-import com.redhunter.searchfriends.utils.Constants
 import com.redhunter.searchfriends.utils.Constants.SELECTED_IMAGE
 import com.redhunter.searchfriends.viewModel.dog.DogViewModel
 import com.redhunter.searchfriends.viewModel.dog.DogViewModelFactory
@@ -24,8 +23,6 @@ class RandomDogFragment : Fragment() {
 
     lateinit var binding: FragmentRandomDogBinding
     private lateinit var dogViewModel: DogViewModel
-    private var position = 0
-    private var listDog = listOf<String>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,16 +55,22 @@ class RandomDogFragment : Fragment() {
             animateBack()
         }
         binding.ivRandom.setOnClickListener {
+            animate()
             if (Connection.isOnline(requireContext())) {
-                setImageRandom(listDog)
+                dogViewModel.getOneDog()
             }
         }
         binding.noConection.reload.setOnClickListener {
             calls()
         }
         binding.ivDog.setOnClickListener {
-            SELECTED_IMAGE=listDog[position-1]
             findNavController().navigate(R.id.action_randomDogFragment_to_detailsFragment)
+        }
+        binding.btBackWhite.setOnClickListener {
+            animateBack()
+        }
+        binding.ivBack.setOnClickListener {
+            animateBack()
         }
     }
 
@@ -78,17 +81,21 @@ class RandomDogFragment : Fragment() {
 
     private fun calls() {
         if (Connection.isOnline(requireContext())) {
-            dogViewModel.getAllDogRandom(Constants.USER_PERMITS)
+            dogViewModel.getOneDog()
         } else {
             controlState(Status.ERROR)
         }
     }
 
     private fun observers() {
-        dogViewModel.allDogRandomData.observe(viewLifecycleOwner, {
-            listDog = it.listDogs
-            setImageRandom(listDog)
-            controlState(it.status)
+        dogViewModel.singleDogData.observe(viewLifecycleOwner, {
+            if (it.status == "success") {
+                controlState(Status.SUCCESS)
+                setImage(it.dog)
+                SELECTED_IMAGE = it.dog
+            } else {
+                controlState(Status.ERROR)
+            }
         })
     }
 
@@ -96,10 +103,6 @@ class RandomDogFragment : Fragment() {
         Glide.with(binding.ivDog).load(image).into(binding.ivDog)
     }
 
-    private fun setImageRandom(listImages: List<String>) {
-        setImage(listImages[position])
-        position += 1
-    }
 
     private fun controlState(state: Status) {
         when (state) {
@@ -119,5 +122,12 @@ class RandomDogFragment : Fragment() {
                 binding.cardView.visibility = View.VISIBLE
             }
         }
+    }
+
+    private fun animate() {
+        binding.ivRandom.animate().apply {
+            duration = 500
+            rotationYBy(360f)
+        }.start()
     }
 }

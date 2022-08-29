@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SearchFriends</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="login_tv_support">Si su cuenta no estaba asociada con el sistema, comuníquese con <b>Soporte técnico</b></string>
+    <string name="login_bt_google">Iniciar con Google</string>
+    <string name="login_bt_login">Entrar</string>
+    <string name="login_bt_register">Registrarse</string>
+    <string name="firebase_title">Entrar</string>
+    <string name="firebase_et_email">Direccion de Email</string>
+    <string name="firebase_et_password">Contraseña</string>
+    <string name="firebase_enter">Entrar</string>
+    <string name="register_tv_title">Registro</string>
+    <string name="register_et_name">Nombre completo</string>
+    <string name="register_et_email">Direccion de email</string>
+    <string name="register_et_password">Crear contraseña</string>
+    <string name="register_bt_register">Registrarse</string>
+    <string name="success_congratulations">Felicitaciones!</string>
+    <string name="success_msg">Registro finalizado</string>
+    <string name="onboarding_tv_hello">Hola</string>
+    <string name="onboarding_tv_human">Humano</string>
+    <string name="onboarding_tv_msg">¿Estás dispuesto a ver nuestros cachorros?</string>
+    <string name="home_bt_random">Aleatorio</string>
+    <string name="home_bt_dogs">Cachorros</string>
+    <string name="home_bt_us">Nosotros</string>
+    <string name="home_bt_search">Buscar</string>
+    <string name="home_bt_adopt_me">Adoptame</string>
+    <string name="login_bt_invited">Invitado</string>
+    <string name="details_tv_adopted">Adoptar</string>
+    <string name="details_tv_description_food">Cualquier dieta debe ser apropiada para el perro. años. Debe haber agua limpia y fresca disponible en todo momento.</string>
+    <string name="details_tv_description_house">Algunos perros pueden optar por dormir en otra habitación por completo, incluso si mantienes la puerta de tu habitación abierta</string>
+    <string name="details_tv_description_health">Crea un horario para sus necesidades. Establece una rutina regular de alimentación para que consigan hacer sus necesidades más o menos siempre a la misma hora.</string>
+    <string name="details_tv_description_friends">Buscará la oportunidad para empezar a hacer sus travesuras. Ya sea para correr, buscar o atrapar, tu amigo peludo siempre estará disponible</string>
+    <string name="details_bt_back">Volver</string>
+    <string name="congrats_bt_back">Volver al inicio</string>
+    <string name="congrats_success_title">Ups! tenemos un error</string>
+    <string name="congrats_success">Gracias a ti, Lucky tiene hogar!</string>
+    <string name="us_tv_members">Miembros</string>
+    <string name="tv_no_search_title">No hay resultados con esa raza</string>
+    <string name="us_tv_about_us">Mas Apps</string>
+    <string name="terms_and_conditions">Terminos y Condiciones</string>
+</resources>

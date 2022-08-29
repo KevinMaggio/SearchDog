@@ -1,7 +1,5 @@
 package com.redhunter.searchfriends.ui.home.adapter
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.ItemDogBinding
-import java.net.URL
 
 class DogAdapter(private val list: List<String>, val onclickListener: (String) -> Unit) : RecyclerView.Adapter<DogHolder>() {
 

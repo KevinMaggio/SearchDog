@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.redhunter.searchfriends.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label=""
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_searchDogsFragment"
@@ -30,12 +30,12 @@
     <fragment
         android:id="@+id/nav_terms_and_conditions"
         android:name="com.redhunter.searchfriends.ui.home.TermsAndConditionsFragment"
-        android:label="Terms and conditions"
+        android:label=""
         tools:layout="@layout/fragment_tems_and_conditions" />
     <fragment
         android:id="@+id/searchDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.SearchDogsFragment"
-        android:label="Search Dogs"
+        android:label=""
         tools:layout="@layout/fragment_search_dogs">
         <action
             android:id="@+id/action_searchDogsFragment_to_detailsFragment"
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/allDogsFragment"
         android:name="com.redhunter.searchfriends.ui.home.AllDogsFragment"
-        android:label="All Dogs"
+        android:label=""
         tools:layout="@layout/fragment_all_dogs">
         <action
             android:id="@+id/action_allDogsFragment_to_detailsFragment"
@@ -53,7 +53,7 @@
     <fragment
         android:id="@+id/usFragment"
         android:name="com.redhunter.searchfriends.ui.home.UsFragment"
-        android:label="Us"
+        android:label=""
         tools:layout="@layout/fragment_us">
         <action
             android:id="@+id/action_usFragment_to_detailsFragment"
@@ -62,7 +62,7 @@
     <fragment
         android:id="@+id/randomDogFragment"
         android:name="com.redhunter.searchfriends.ui.home.RandomDogFragment"
-        android:label="Random"
+        android:label=""
         tools:layout="@layout/fragment_random_dog">
         <action
             android:id="@+id/action_randomDogFragment_to_detailsFragment"
@@ -71,32 +71,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.redhunter.searchfriends.ui.home.DetailsFragment"
-        android:label="Details"
-        tools:layout="@layout/fragment_details">
-        <action
-            android:id="@+id/action_detailsFragment_to_adoptSuccessFragment"
-            app:destination="@id/adoptSuccessFragment" />
-        <action
-            android:id="@+id/action_detailsFragment_to_adoptErrorFragment"
-            app:destination="@id/adoptErrorFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/adoptSuccessFragment"
-        android:name="com.redhunter.searchfriends.ui.home.AdoptSuccessFragment"
-        android:label="Adopt Success"
-        tools:layout="@layout/fragment_adopt_success" >
-        <action
-            android:id="@+id/action_adoptSuccessFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
-    <fragment
-        android:id="@+id/adoptErrorFragment"
-        android:name="com.redhunter.searchfriends.ui.home.AdoptErrorFragment"
-        android:label="Adopt Error"
-        tools:layout="@layout/fragment_adopt_error" >
-        <action
-            android:id="@+id/action_adoptErrorFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
+        android:label=""
+        tools:layout="@layout/fragment_details"/>
 
 </navigation>

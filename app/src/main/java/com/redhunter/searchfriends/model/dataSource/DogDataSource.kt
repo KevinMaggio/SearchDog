@@ -2,11 +2,14 @@ package com.redhunter.searchfriends.model.dataSource
 
 import android.app.Application
 import com.redhunter.searchfriends.model.dto.dog.DogModel
+import com.redhunter.searchfriends.model.dto.retrofitDto.ResponseDogRetrofit
+import com.redhunter.searchfriends.model.dto.retrofitDto.ResponseSingleDogRetrofit
 import com.redhunter.searchfriends.model.dto.retrofitDto.Status
 import com.redhunter.searchfriends.model.dto.roomDto.ResponseDogRoom
 import com.redhunter.searchfriends.model.service.ServiceRetrofit
 import com.redhunter.searchfriends.utils.AppDataBaseRoom
 import com.redhunter.searchfriends.utils.Permission
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
@@ -16,7 +19,7 @@ class DogDataSource(application: Application) {
 
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://dog.ceo/api/breeds/")
+        .baseUrl("https://dog.ceo/api/")
         .build()
     private val serviceImplement = retrofit.create(ServiceRetrofit::class.java)
     private val daoImplement = AppDataBaseRoom.getInstance(application).dogDao()
@@ -36,6 +39,14 @@ class DogDataSource(application: Application) {
                 }
             }
         }
+    }
+
+    suspend fun getOneDog(): Response<ResponseSingleDogRetrofit> {
+        return serviceImplement.getOneDog()
+    }
+
+    suspend fun searchDog(breed: String): Response<ResponseSingleDogRetrofit> {
+        return serviceImplement.searchDogByBreed(breed)
     }
 
     suspend fun postDogToRoom() {

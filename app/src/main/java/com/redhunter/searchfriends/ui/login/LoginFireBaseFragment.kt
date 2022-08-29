@@ -15,6 +15,7 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.redhunter.searchfriends.AppSearchFriends.Companion.preferences
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentLoginFireBaseBinding
 import com.redhunter.searchfriends.ui.onboarding.OnboardingActivity
@@ -51,6 +52,7 @@ class LoginFireBaseFragment : Fragment() {
                 binding.etPassword.text.toString()
             )
             USER_NAME= binding.etEmail.text.toString()
+            preferences.saveFireBaseAuth(binding.etEmail.text.toString())
         }
         binding.btBack.setOnClickListener {
             findNavController().popBackStack()
@@ -97,6 +99,7 @@ class LoginFireBaseFragment : Fragment() {
             StateLogin.SUCCESS -> {
                 binding.itemLoading.root.isVisible = false
                 Constants.USER_PERMITS = Permission.COMPLETE
+                preferences.saveUserEmail("fireStore")
                 startActivity(Intent(context, OnboardingActivity::class.java))
             }
         }

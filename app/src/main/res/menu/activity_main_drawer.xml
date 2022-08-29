@@ -7,10 +7,10 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_paw"
-            android:title="Home" />
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_terms_and_conditions"
             android:icon="@drawable/ic_config"
-            android:title="terms and conditions" />
+            android:title="@string/terms_and_conditions" />
     </group>
 </menu>

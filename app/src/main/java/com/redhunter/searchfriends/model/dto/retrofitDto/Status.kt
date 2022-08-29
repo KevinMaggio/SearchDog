@@ -1,5 +1,5 @@
 package com.redhunter.searchfriends.model.dto.retrofitDto
 
 enum class Status {
-    LOADING, SUCCESS, ERROR
+    LOADING, SUCCESS, ERROR,NO_SEARCH
 }

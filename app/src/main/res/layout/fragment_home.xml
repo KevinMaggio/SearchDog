@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <ImageView
         android:id="@+id/title"
@@ -20,9 +26,13 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -39,7 +49,7 @@
             android:id="@+id/bt_dogs"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:background="@drawable/circle_black"
             android:text="@string/home_bt_dogs"
             android:textColor="@color/white"
@@ -50,7 +60,7 @@
             android:id="@+id/bt_us"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:background="@drawable/circle_white"
             android:text="@string/home_bt_us"
             android:textSize="12sp"
@@ -60,7 +70,7 @@
             android:id="@+id/bt_search"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:background="@drawable/circle_orange"
             android:text="@string/home_bt_search"
             android:textSize="12sp"
@@ -117,4 +127,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

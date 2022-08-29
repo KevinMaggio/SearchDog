@@ -12,6 +12,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_hori_0.7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -35,13 +41,13 @@
         android:id="@+id/tv_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
         android:fontFamily="@font/roboto_bolt"
         android:text="@string/onboarding_tv_hello"
         android:textColor="@color/orange"
         android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gl_hori_0.5" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_human"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_human"
@@ -52,16 +58,19 @@
         android:text="@string/onboarding_tv_human"
         android:textColor="@color/black"
         android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hello" />
+        app:layout_constraintBottom_toTopOf="@+id/gl_hori_0.7"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:fontFamily="@font/ropa_sans"
         android:text="@string/onboarding_tv_msg"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/indicator"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_human" />
 
@@ -70,20 +79,20 @@
         android:layout_width="60dp"
         android:layout_height="70dp"
         android:layout_margin="30dp"
-        android:enabled="true"
         android:background="@drawable/action_paw_dog"
+        android:enabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_margin="30dp"
-        android:visibility="invisible"
+    <ImageView
+        android:id="@+id/indicator"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/indicator"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/iv_accept"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/iv_accept" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

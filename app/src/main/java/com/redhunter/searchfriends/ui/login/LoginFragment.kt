@@ -15,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.redhunter.searchfriends.AppSearchFriends.Companion.preferences
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.FragmentLoginBinding
 import com.redhunter.searchfriends.ui.onboarding.OnboardingActivity
@@ -52,6 +53,7 @@ class LoginFragment : Fragment() {
         binding.btInvited.setOnClickListener {
             USER_PERMITS = Permission.LIMITED
             USER_NAME= "INVITED"
+            preferences.saveUserEmail("invited")
             startActivity(Intent(context, OnboardingActivity::class.java))
                 activity?.finish()
         }
@@ -80,6 +82,7 @@ class LoginFragment : Fragment() {
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
 
+                                preferences.saveUserEmail("google")
                                 USER_NAME = it.result.user?.email.toString()
                                 USER_PERMITS = Permission.COMPLETE
                                 startActivity(Intent(context, OnboardingActivity::class.java))

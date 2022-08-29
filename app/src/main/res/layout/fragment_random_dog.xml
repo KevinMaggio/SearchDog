@@ -9,8 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_hori_0.8"
@@ -86,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
+            app:layout_constraintTop_toBottomOf="@+id/gl_hori_0.8">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bt_back_white"
@@ -94,20 +93,21 @@
                 android:layout_height="60dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/radius_white"
-                android:elevation="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/gl_start_back"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="50dp"
+                android:id="@+id/iv_back"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:elevation="2dp"
+                android:padding="15dp"
                 android:src="@drawable/icon_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/bt_back_white"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -138,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.50" />
+                app:layout_constraintGuide_begin="206dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

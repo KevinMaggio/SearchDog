@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.redhunter.searchfriends.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label=""
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -20,8 +20,8 @@
     <fragment
         android:id="@+id/loginFireBaseFragment"
         android:name="com.redhunter.searchfriends.ui.login.LoginFireBaseFragment"
-        android:label="fragment_login_fire_base"
-        tools:layout="@layout/fragment_login_fire_base" >
+        android:label=""
+        tools:layout="@layout/fragment_login_fire_base">
         <action
             android:id="@+id/action_loginFireBaseFragment_to_registerSuccessFragment"
             app:destination="@id/registerSuccessFragment" />
@@ -32,8 +32,8 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.redhunter.searchfriends.ui.login.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        android:label=""
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment_to_registerSuccessFragment"
             app:destination="@id/registerSuccessFragment" />
@@ -44,6 +44,6 @@
     <fragment
         android:id="@+id/registerSuccessFragment"
         android:name="com.redhunter.searchfriends.ui.login.RegisterSuccessFragment"
-        android:label="fragment_register_success"
+        android:label=""
         tools:layout="@layout/fragment_register_success" />
 </navigation>

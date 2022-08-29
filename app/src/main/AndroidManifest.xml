@@ -2,16 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.redhunter.searchfriends">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".AppSearchFriends"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_dog"
         android:supportsRtl="true"
-        android:name=".AppSearchFriends"
         android:theme="@style/Theme.SearchFriends">
+        <activity
+            android:name=".ui.congrats.ErrorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.congrats.SuccessActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false"

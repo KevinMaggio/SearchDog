@@ -101,8 +101,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun onClickListener(image: String) {
-        SELECTED_IMAGE=image
-        findNavController().navigate(R.id.action_nav_home_to_detailsFragment)
+        if (USER_PERMITS == Permission.COMPLETE) {
+            SELECTED_IMAGE=image
+            findNavController().navigate(R.id.action_nav_home_to_detailsFragment)
+        } else {
+            Toast.makeText(
+                context,
+                "Contenido no Disponible para Invitados",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     private fun onClickRemove(position: Int) {

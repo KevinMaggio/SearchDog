@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.AdoptErrorFragment">
+    tools:context=".ui.congrats.SuccessActivity">
 
     <TextView
         android:id="@+id/textView4"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:fontFamily="@font/comfortaa_regular"
-        android:text="@string/congrats_success_title"
+        android:text="@string/congrats_success"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp"
@@ -27,7 +27,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:scaleType="fitXY"
-        android:src="@drawable/img_sad_dog"
+        android:src="@drawable/img_happy_dog"
         app:layout_constraintBottom_toTopOf="@+id/gl_hori_0.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,14 +40,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.80" />
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="20dp"
-        android:src="@drawable/icon_error_adopt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_back_home"
         android:layout_width="match_parent"
@@ -59,5 +51,4 @@
         android:text="@string/congrats_bt_back"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

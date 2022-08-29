@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.redhunter.searchfriends.AppSearchFriends.Companion.preferences
 import com.redhunter.searchfriends.R
 import com.redhunter.searchfriends.databinding.ActivityHomeBinding
 import com.redhunter.searchfriends.databinding.NavHeaderHomeBinding
@@ -34,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarHome.toolbar)
 
         binding.exit.setOnClickListener {
+            preferences.clear()
             startActivity(Intent(this, LoginActivity::class.java))
                 finish()
         }
